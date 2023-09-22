@@ -17,9 +17,56 @@ void main() {
 
   var output = add(11, 4);
   print(output);
-  print(add(20,3));
+  print(add(20, 3));
+  //---------------------------------------------------------------------------------------
 
-  //-----------------------------------------------------------
+  //VOID FUNCTION
+  void myFunction() {
+    var FirstName = 'Mateus';
+
+    if (FirstName.startsWith('M')) {
+      print("The first name starts with M");
+    } else {
+      print("The first name does not starts with M");
+    }
+  }
+
+  myFunction();
+
+  //---------------------------------------------------------------------------------------
+
+  //ARROW FUNCTION:
+  //ReturnType FunctionName(Parameters...) => Expression;
+
+  void perimeter(int length, int breadth) =>
+      print('The perimeter is ${2 * (length + breadth)}');
+
+  perimeter(10, 21);
+
+  somar(x, y) {
+    var a = x + y;
+    return a;
+  }
+
+  print('The result is ${somar(11, 9)}');
+
+  //However, if you use the =>
+  var w = 10;
+  var z = 12;
+  int soma() => w + z;
+  print('O resultado da soma é ${soma()} ');
+
+  //-----------------------------------------------------------------------------------------
+
+  //ANONYMUS FUNCTIONS
+  var list = ["James", "Patrick", "Mathew", "Tom"];
+  print("Example of anonymous function");
+  
+  list.forEach((item) {
+    print('${list.indexOf(item)}: $item');
+  });
+
+  //-----------------------------------------------------------------------------------------
 
   double calculateArea(double radius) {
     return 3.14 * radius * radius;
