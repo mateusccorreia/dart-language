@@ -74,7 +74,7 @@ void main() {
 
   print(calculateArea(5));
 
-  const list = ['apples', 'bananas', 'oranges', 'lemon'];
+  const lista = ['apples', 'bananas', 'oranges', 'lemon'];
 
   list.map((item) {
     return item.toUpperCase();
