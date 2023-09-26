@@ -1,4 +1,4 @@
-  //The class keyword is followed by the class name. 
+//The class keyword is followed by the class name.
 
 // A class definition can include the following:
 
@@ -39,17 +39,18 @@ class Pessoa {
   Pessoa(this.nome, this.idade);
 
   void mostrarDetalhes() {
-    print('Nome: $nome, Idade: $idade');    
+    print('Nome: $nome, Idade: $idade');
   }
 }
 
 // Dart Constructors
 //SYNTAX:
-// Class_name(parameter_list) { 
-   //constructor body 
+// Class_name(parameter_list) {
+//constructor body
 // }
 
-class Moto{ //EXEMPLO DE CONSTRUTOR
+class Moto {
+  //EXEMPLO DE CONSTRUTOR
   Moto(String engine) {
     print(engine);
   }
@@ -76,19 +77,19 @@ class Aviao {
 //A getter has no parameters and returns a value, and the setter has one parameter and does not return a value.
 
 class Estudante {
-  String name;
-  int age;
+  String name = 'Teste';
+  int age = 2;
 
   String get stud_name {
     return name;
   }
 
-  void set stud_name(String Name) {
+  void set stud_name(String name) {
     this.name = name;
   }
 
   void set stud_age(int age) {
-    if(age <= 0) {
+    if (age <= 0) {
       print("Age should be greater than 5");
     } else {
       this.age = age;
@@ -99,6 +100,68 @@ class Estudante {
     return age;
   }
 }
+
+//herança e polimorfismo
+//Dart supports the concept of Inheritance which is the ability of a program to create new classes from an existing class.
+//Child classes inherit all properties and methods except constructors from the parent class.
+
+//SYNTAX
+// class child_class_name extends parent_class_name
+class Shape {
+  void cal_area() {
+    print("calling calc area defined in the Shape class");
+  }
+}
+
+class Circle extends Shape {}
+
+// Types of Inheritance
+// Inheritance can be of the following three types:
+
+// Single − Every class can at the most extend from one parent class.
+// Multiple − A class can inherit from multiple classes. Dart doesn’t support multiple inheritance.
+// Multi-level − A class can inherit from another child class.
+
+class Root {
+  String str = '';
+}
+
+class Child extends Root {}
+
+class Leaf extends Child {}
+
+//Dart – Class Inheritance and Method Overriding
+//Method Overriding is a mechanism by which the child class redefines a method in its parent class. The following example illustrates the same −
+
+class Parent {
+  void m1(int a) {
+    print("value of a ${a}");
+  }
+  String msg = "message variable from the parent class"; 
+}
+
+class Filho extends Parent {
+  @override
+  void m1(int b) {
+    print("value of b ${b}");
+    super.m1(b);
+    print("${super.msg}");
+  }
+}
+
+//The static Keyword
+// The static keyword can be applied to the data members of a class, i.e., fields and methods. A static variable retains its values till the program finishes execution. Static members are referenced by the class name.
+
+class Qualquer {
+  static int num = 0;
+  static disp() {
+    print("The value of num is ${Qualquer.num}");
+  }
+}
+
+// The super Keyword
+// The super keyword is used to refer to the immediate parent of a class. The keyword can be used to refer to the super class version of a variable, property, or method. The following example illustrates the same −
+
 
 void main() {
   Car c = new Car();
@@ -117,7 +180,21 @@ void main() {
   //get and set
   Estudante s1 = new Estudante();
   s1.stud_name = "MATEUS";
-  s1.stud_age = 0;
+  s1.stud_age = 18;
   print(s1.stud_name);
   print(s1.stud_age);
+
+  var obj = new Circle();
+  obj.cal_area();
+
+  var novoObj = new Leaf();
+  novoObj.str = "Fazendo testes";
+  print(novoObj.str);
+  //The class Leaf derives the attributes from Root and Child classes by virtue of multi-level inheritance.
+
+  Filho d = new Filho();
+  d.m1(14);
+  
+  Qualquer.num = 19;
+  Qualquer.disp();
 }
