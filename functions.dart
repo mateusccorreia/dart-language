@@ -113,4 +113,23 @@ void main() {
   });
 
   print('The sum of all grades is $sum');
+
+  //MÉTODO MAP()
+  List<int> numeros = [1, 2, 3, 4, 5];
+  List<int> quadrados = numeros.map((e) => e * e).toList();
+  print(numeros);
+  print('Esses são os quadrados: $quadrados');
+
+  Set umSet = {1, 2, 3, 4};
+  Set novoSet = umSet.map((e) => e == 4 ? 11 : e).toSet();
+  print('Esse é novo set $novoSet');
+  var isRemoved = numeros.remove(1);
+  print(isRemoved);
+  print(numeros);
+  for(int qualquercoisa in numeros){
+    print('Iterando no conjunto numeros $qualquercoisa');
+  }
+  umSet.forEach((element) { 
+    print('Iterando com forEach $element');
+  });
 }
