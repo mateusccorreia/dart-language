@@ -61,7 +61,7 @@ void main() {
   //ANONYMUS FUNCTIONS
   var list = ["James", "Patrick", "Mathew", "Tom"];
   print("Example of anonymous function");
-  
+
   list.forEach((item) {
     print('${list.indexOf(item)}: $item');
   });
@@ -126,10 +126,57 @@ void main() {
   var isRemoved = numeros.remove(1);
   print(isRemoved);
   print(numeros);
-  for(int qualquercoisa in numeros){
+  for (int qualquercoisa in numeros) {
     print('Iterando no conjunto numeros $qualquercoisa');
   }
-  umSet.forEach((element) { 
+  umSet.forEach((element) {
     print('Iterando com forEach $element');
   });
+
+  //METODOS MAIS UTILIZADOS EM DART
+
+  //filter()
+  var n = [1, 2, 3, 4, 5];
+  var par = n.where((e) => e % 2 == 0);
+  print(par);
+
+  //toString()
+  var numero = 42;
+  print(numero.toString()); // Converte o número em uma string: "42"
+
+  //toUpperCase() e toLowerCase():
+  var texto = "Dart é incrível";
+  print(texto.toUpperCase()); // Converte para maiúsculas: "DART É INCRÍVEL"
+
+  //split():
+  var frase = "Isso é uma frase";
+  var palavras = frase.split(" "); // Divide a frase em palavras
+  print(palavras); // Imprime: [Isso, é, uma, frase]
+
+  //join():
+  var palavrass = ["Isso", "é", "uma", "frase"];
+  var frasee = palavrass.join(" "); // Combina as palavras em uma frase
+  print(frasee); // Imprime: "Isso é uma frase"
+
+  //forEach()
+  var numerosss = [1, 2, 3, 4, 5];
+  numerosss.forEach((numero) {
+    print(numero);
+  });
+
+  //map()
+  // var numeros = [1, 2, 3, 4, 5];
+  // var quadrados = numeros.map((numero) => numero * numero);
+  // print(quadrados); // Imprime: (1, 4, 9, 16, 25)
+
+  //sort(): 
+  // var numeros = [5, 2, 8, 1, 9];
+  // numeros.sort();
+  // print(numeros); // Imprime: [1, 2, 5, 8, 9]
+
+  //reduce()
+  // var numeros = [1, 2, 3, 4, 5];
+  // var soma = numeros.reduce((a, b) => a + b);
+  // print(soma); // Calcula a soma: 15
+
 }
